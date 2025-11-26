@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresh Fruit Market</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8f5e9 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        h1 {
+            color: #2d5016;
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .subtitle {
+            color: #5a7c5a;
+            font-size: 1.2em;
+            font-weight: 300;
+        }
+
+        .fruit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .fruit-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .fruit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--accent-color), var(--accent-light));
+        }
+
+        .fruit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .fruit-icon {
+            font-size: 5em;
+            margin: 20px 0;
+            display: block;
+            filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.1));
+        }
+
+        .fruit-name {
+            color: #2d3748;
+            font-size: 1.8em;
+            margin: 15px 0;
+            font-weight: 600;
+        }
+
+        .fruit-description {
+            color: #718096;
+            font-size: 0.95em;
+            margin: 10px 0 20px;
+            line-height: 1.6;
+        }
+
+        .price-tag {
+            background: linear-gradient(135deg, var(--accent-color), var(--accent-light));
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-size: 1.3em;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Individual fruit color themes */
+        .fruit-card:nth-child(1) {
+            --accent-color: #ff6b6b;
+            --accent-light: #ff8787;
+        }
+
+        .fruit-card:nth-child(2) {
+            --accent-color: #ffa94d;
+            --accent-light: #ffc078;
+        }
+
+        .fruit-card:nth-child(3) {
+            --accent-color: #a78bfa;
+            --accent-light: #c4b5fd;
+        }
+
+        .fruit-card:nth-child(4) {
+            --accent-color: #4ade80;
+            --accent-light: #86efac;
+        }
+
+        .fruit-card:nth-child(5) {
+            --accent-color: #fbbf24;
+            --accent-light: #fcd34d;
+        }
+
+        .fruit-card:nth-child(6) {
+            --accent-color: #f472b6;
+            --accent-light: #f9a8d4;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            color: #718096;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .fruit-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🍎 Fresh Fruit Market</h1>
+            <p class="subtitle">Handpicked, organic, and always fresh</p>
+        </header>
+
+        <div class="fruit-grid">
+            <!-- Strawberry -->
+            <div class="fruit-card">
+                <span class="fruit-icon">🍓</span>
+                <h2 class="fruit-name">Strawberries</h2>
+                <p class="fruit-description">Sweet and juicy, perfect for desserts or snacking</p>
+                <div class="price-tag">$4.99/lb</div>
+            </div>
+
+            <!-- Orange -->
+            <div class="fruit-card">
+                <span class="fruit-icon">🍊</span>
+                <h2 class="fruit-name">Oranges</h2>
+                <p class="fruit-description">Fresh citrus bursting with Vitamin C and natural sweetness</p>
+                <div class="price-tag">$3.49/lb</div>
+            </div>
+
+            <!-- Grapes -->
+            <div class="fruit-card">
+                <span class="fruit-icon">🍇</span>
+                <h2 class="fruit-name">Grapes</h2>
+                <p class="fruit-description">Seedless and crisp, ideal for a healthy snack</p>
+                <div class="price-tag">$5.99/lb</div>
+            </div>
+
+            <!-- Watermelon -->
+            <div class="fruit-card">
+                <span class="fruit-icon">🍉</span>
+                <h2 class="fruit-name">Watermelon</h2>
+                <p class="fruit-description">Refreshing and hydrating, perfect for summer days</p>
+                <div class="price-tag">$6.99/each</div>
+            </div>
+
+            <!-- Banana -->
+            <div class="fruit-card">
+                <span class="fruit-icon">🍌</span>
+                <h2 class="fruit-name">Bananas</h2>
+                <p class="fruit-description">Rich in potassium and naturally sweet energy boost</p>
+                <div class="price-tag">$2.99/lb</div>
+            </div>
+
+            <!-- Cherries -->
+            <div class="fruit-card">
+                <span class="fruit-icon">🍒</span>
+                <h2 class="fruit-name">Cherries</h2>
+                <p class="fruit-description">Deliciously sweet with a hint of tartness</p>
+                <div class="price-tag">$7.99/lb</div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Fresh fruits delivered daily • Farm to table quality</p>
+        </footer>
+    </div>
+</body>
+</html>
